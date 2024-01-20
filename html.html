@@ -1,0 +1,215 @@
+<!--html5的标识-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--页面的字符集-->
+    <meta charset="UTF-8">
+    <title>html快速入门</title>
+</head>
+<!--html语法松散，如"red"不加引号，不写</font>都可以正确执行-->
+<!--被干掉的标签表示过时了，它们的任务应该让css完成-->
+<body>
+<center><h1>这是最大的标题字体</h1></center>
+<hr>
+<!--html表示颜色
+1、英文单词，不方便
+2、rgb(1,2,3), 三原色取值在0~255之间
+3、十六进制三原色，推荐，取值在00~ff之间"#ff0000"
+-->
+<center><font color="ff0000" size="5" face="楷体"> <p>head标题  html快速入门 显示在网页上面，这些文字写在body里<br></p>
+  <p>另外html的标签不区分大小写</p>
+    <b>b标签功能<br></b>
+    <i>i标签功能<br></i>
+    <u>u标签功能<br></u>
+</font>
+</center>
+<hr>
+<!--资源路径：
+1、绝对路径：例如完整的图片链接和d盘完整的文件路径
+2、相对路径：相对位置关系
+例如此文件路径com/zndx/html/html.html
+图片路径com/zndx/html/a.gif
+此时可以把前面相同的路径写成./，而./本身又可以省略，最后写a.gif就可以了
+如果图片在html目录下的img目录中，img/a.gif
+如果在zndx目录下的img目录中，../img/a.gif,其中../表示往上推一层目录
+尺寸单位：数字表示像素，20%表示占body窗体的20%
+-->
+<img src="./a.gif" width="200" height="300">
+<img src="https://pic35.photophoto.cn/20150511/0034034892281415_b.jpg" width="100" height="100">
+<audio src="c.mp3" controls></audio>
+<video src="b.mp4" controls width="200" height="300"></video>
+<a target="_blank" href="https://blog.csdn.net/sunxiaofre/article/details/55805420?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169636590316800184194099%2522%252C%2522scm
+%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169636590316800184194
+099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ec
+pm-2-55805420-null-null.142^v94^insert_down1&utm_term=htmlfont%E6%A0%87%E7%AD%BE%E8%A2%AB%E4%BB%80%
+E4%B9%88%E6%9B%BF%E6%8D%A2%E4%BA%86&spm=1018.2226.3001.4187">好好学习!</a>
+<ol type="i">
+    <li>aa</li>
+    <li>bb</li>
+    <li>cc</li>
+</ol>
+<ul type="circle">
+    <li>aa</li>
+    <li>bb</li>
+    <li>cc</li>
+</ul>
+<table border="1" cellspacing="0" width="500" >
+    <tr align="center">
+<!--        <th>id</th>-->
+<!--        让第一个单元格占两个位置-->
+        <th  colspan="2">username</th>
+        <th>gender</th>
+    </tr>
+    <tr align="center">
+        <td>1</td>
+        <td rowspan="2"><img src="a.gif" width="50" height="50"></td>
+        <td>boy</td>
+    </tr>
+    <tr align="center" >
+        <td>2</td>
+<!--        <td>李四</td>-->
+        <td>女</td>
+    </tr>
+</table>
+<div>这是div</div>
+<div>这是div</div>
+<span>这是span</span>
+<span>这是span</span>
+<!--action:指定表单数据提交的URL，#表示提交给当前html页面
+表单数据想被提交，还要再指定应该name属性
+method:指定表单提交方式
+1、get：默认值，把请求参数拼接在url后面，请求参数因url长度有限而有限制，例如下面执行后
+http://localhost:63342/maven/html/html.html?username=2098516801%40qq.com#
+2、post：请求在http协议的请求体中，请求参数无限制
+-->
+<form action="#" method="get">
+    <input type="text" name="username">
+<!--    其中username为键，提交数据作为值，传到服务端-->
+    <input type="submit">
+</form>
+
+<form action="#" method="post">
+    <input type="hidden" name="id" value="123">
+<!--    使点击用户名时选中username输入框-->
+    <label for="username">用户名：</label>
+    <input type="text" name="username" id="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：<input type="radio" name="gender" value="1" id="m"> <label for="m">男</label>
+    <input type="radio" name="gender" value="0" id="n"> <label for="n">女</label><br>
+<!--    name值相同才能得到互斥效果，必须有value区分两个选项，不然到服务端都是on-->
+    爱好：<input type="checkbox" name="hobby" value="1"> 旅游
+    <input type="checkbox" name="hobby" value="2"> 电影
+    <input type="checkbox" name="hobby" value="3"> 游戏<br>
+     头像：<input type="file"><br>
+     城市：<select name="city">
+<!--    提交的数据以value为准，没有value填aa等-->
+    <option value="aa1">aa</option>
+    <option>bb</option>
+    <option>cc</option>
+     </select><br>
+    个人描述：<textarea cols="5" rows="20" name="desc"></textarea><br>
+<!--    20行，每行五字符-->
+    <input type="reset">
+    <input type="submit" value="免费注册"><!--value修改文本内容-->
+    <input type="button" value="一个按钮">
+
+</form>
+<div id="app">
+    <table >
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>password</th>
+            <th>gender</th>
+            <th>addr</th>
+        </tr>
+        <tr align="center" v-for="(user1,i) in user">
+            <td>{{i+1}}</td>
+            <td>{{user1.username}}</td>
+            <td>{{user1.password}}</td>
+            <td>{{user1.gender}}</td>
+            <td>{{user1.addr}}</td>
+        </tr>
+</div>
+<table id="usertable" border="1" cellspacing="0" width="100%">
+    <tr>
+        <th>username</th>
+        <th>password</th>
+        <th>gender</th>
+        <th>addr</th>
+    </tr>
+    <tr align="center">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script src="axios.js"></script>
+<script src="../js/vue.js"></script>
+<script>
+    //页面加载完后，发送ajax请求
+    window.onload=function()
+    {
+        axios(
+        {
+            method:"post",
+            url:"http://localhost/aa/selectAllServlet",
+            data:"username=lisi"
+        }
+        ).then(function(resp)
+       {
+        //alert("jin");
+        let users=resp.data;
+        let table="<tr>\n" +
+        "        <th>username</th>\n" +
+        "        <th>password</th>\n" +
+        "        <th>gender</th>\n" +
+        "        <th>addr</th>\n" +
+        "    </tr>";
+        for(let i=0;i<users.length;i++)
+        {
+            let user=users[i];
+            table+="<tr align=\"center\">\n" +
+            "        <td>"+user.username+"</td>\n" +
+            "        <td>"+user.password+"</td>\n" +
+            "        <td>"+user.gender+"</td>\n" +
+            "        <td>"+user.addr+"</td>\n" +
+            "    </tr>";
+        }
+        document.getElementById("usertable").innerHTML=table;
+       }
+       )
+    }
+</script>
+
+<script>
+   new Vue(
+        {
+            el:"#app",
+            data(){
+                return{
+                    user:[]
+                }
+            },
+            mounted(){
+                //页面加载完后，发送异步请求查询数据
+                var _this=this;
+                axios(
+                     {
+                       method:"post",
+                       url:"http://localhost/aa/selectAllServlet",
+                       data:"username=lisi"
+                     }
+                     ).then(function(resp)
+                     {//这里this默认为window对象，所以要在外面保留this到里面用
+                        _this.user=resp.data;
+                     })
+            }
+        }
+    )
+</script>
+
+</body>
+</html>
