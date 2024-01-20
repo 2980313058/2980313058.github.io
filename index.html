@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+<!--  内部样式-->
+  <style>
+/*<!--哪个范围小哪个生效-->*/
+  span{
+  color:red;
+  }
+  #name{
+  color:blue;
+  }
+  .cls{
+  color:pink;
+  }
+</style>
+    <link href="../css/css.css" rel="stylesheet">
+</head>
+<body>
+<!--内联样式-->
+<div style="color:red">hello css</div>
+<span>hello css</span><br>
+<span id="name">name</span>
+<div class="cls">divclass</div>
+<span class="cls">spanclass</span>
+<p>hello css</p>
+</body>
+</html>
